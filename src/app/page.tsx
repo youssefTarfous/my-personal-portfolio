@@ -1,14 +1,14 @@
-import Image from "next/image";
 import Header from "@/Components/Layout/Header";
 import Footer from "@/Components/Layout/Footer";
+import Hero from "@/Components/UI/Hero";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="container py-4 grid items-center min-w-screen gap-16 font-[family-name:var(--font-ibm-plex-mono)]">
       <Header />
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        
+      <main className="container min-w-full min-h-screen flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <Hero />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

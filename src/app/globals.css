@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color-dk: #003366;
+  --background-color-dk-2: #06182C;
+  --background-color-lg: #f8fafc;
+  --color-cyan: #00B4D8;
+  --background-color-gray: #E2E8F0;
+  --background-btn-gr1:#00FFFF;
+  --background-gr-2: #007BFF;
+  --background-btn-lgr1:#E2E8F0;
+  --background-btn-lgr2:#00B4D8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +22,38 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--background-btn-gr1);
+  background: var(--background-color-dk-2);
   font-family: Arial, Helvetica, sans-serif;
+}
+button.light{
+  padding: 1.2lvw 2.4vw;
+  background-color: var(--background-color-dk-2);
+  border: none;
+  border-radius: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+button.light::after{
+  content: '';
+  position: absolute;
+  height: 110%;
+  width: 104%;
+  border-radius: 1000px;
+  background-image: linear-gradient(to right ,var(--background-btn-lgr1) ,var(--background-btn-gr1), var(--background-gr-2));
+  z-index: -2;
+}
+button.light:hover{
+  z-index: 0;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4), 0 1px 10px rgba(0, 31, 63, 0.2);
+
+}
+button.light:hover span{
+  z-index: 0;
+  -webkit-text-fill-color: #f8fafc;
+  background: transparent;
 }
