@@ -8,7 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between p-4 bg-gray-900 text-white">
+    <header className="flex sticky top-0 items-center justify-between  text-white">
       {/* Logo */}
       <Image src="/Logo.png" alt="Next.js logo" width={64} height={64} priority />
 
@@ -37,7 +37,7 @@ export default function Header() {
 
       {/* Navigation Menu */}
       <nav
-        className={`absolute top-16 left-0 w-full bg-gray-800 md:static md:w-auto md:flex ${
+        className={`absolute top-16 left-0 w-full  md:static md:w-auto md:flex ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -47,18 +47,18 @@ export default function Header() {
               Home
             </a>
           </li>
-          <li>
-            <a href="#about" className="block p-2 md:p-0 hover:text-blue-400">
+          <li className="md:text-center">
+            <a href="#about" className="block p-2 md:p-0 hover:text-blue-400  md:text-center  ">
               About
             </a>
           </li>
           <li>
-            <a href="#services" className="block p-2 md:p-0 hover:text-blue-400">
+            <a href="#services" className="block p-2 md:p-0 hover:text-blue-400md:text-center">
               Services
             </a>
           </li>
           <li>
-            <a href="#contact" className="block p-2 md:p-0 hover:text-blue-400">
+            <a href="#contact" className="block p-2 md:p-0 hover:text-blue-400 md:text-center">
               Contact
             </a>
           </li>

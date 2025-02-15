@@ -4,6 +4,7 @@
 
 :root {
   --background-color-dk: #003366;
+  --rich-black: #051324;
   --background-color-dk-2: #06182C;
   --background-color-lg: #f8fafc;
   --color-cyan: #00B4D8;
@@ -23,7 +24,7 @@
 
 body {
   color: var(--background-btn-gr1);
-  background: var(--background-color-dk-2);
+  /* background: var(--background-color-dk-2); */
   font-family: Arial, Helvetica, sans-serif;
 }
 button.light{

@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexMono.variable} ${geistSans.variable}  ${geistMono.variable} antialiased`}
+        className={` bg-gradient-to-t from-[#001F3F]  via-[#06182C] to-[#020912] ${ibmPlexMono.variable} ${geistSans.variable}  ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
