@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="container py-4 grid items-center min-w-screen font-[family-name:var(--font-ibm-plex-mono)]">
       <Header />
-      <main className="container min-w-full min-h-screen flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <main className="min-w-full min-h-[calc(100vh-62px)] flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Hero />
       </main>
       <Footer />

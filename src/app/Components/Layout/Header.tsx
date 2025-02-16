@@ -8,7 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between p-4 bg-gray-900 text-white">
+    <header className="flex items-center top-0 sticky justify-between text-white">
       {/* Logo */}
       <Image src="/Logo.png" alt="Next.js logo" width={64} height={64} priority />
 
@@ -37,7 +37,7 @@ export default function Header() {
 
       {/* Navigation Menu */}
       <nav
-        className={`absolute top-16 left-0 w-full bg-gray-800 md:static md:w-auto md:flex ${
+        className={`absolute top-16 left-0 w-full md:static md:w-auto md:flex ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -67,8 +67,8 @@ export default function Header() {
 
       {/* Contact Button (Always Visible) */}
       <div>
-        <button className="bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded text-white">
-          Contact
+        <button className="light py-3 px-5 md:px-10 gradient-button hover:scale-105 text-white rounded-full">
+          Contact me
         </button>
       </div>
     </header>
