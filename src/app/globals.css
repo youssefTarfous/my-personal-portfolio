@@ -5,11 +5,11 @@
 :root {
   --background-color-dk: #003366;
   --background-color-dk-2: #06182C;
+  --color-blue: #007BFF;
   --background-color-lg: #f8fafc;
   --color-cyan: #00B4D8;
   --background-color-gray: #E2E8F0;
   --background-btn-gr1:#00FFFF;
-  --background-gr-2: #007BFF;
   --background-btn-lgr1:#E2E8F0;
   --background-btn-lgr2:#00B4D8;
 }
@@ -42,7 +42,7 @@ button.gradient-button::after{
   height: 110%;
   width: 104%;
   border-radius: 1000px;
-  background-image: linear-gradient(to right ,var(--background-btn-lgr1) ,var(--background-btn-gr1), var(--background-gr-2));
+  background-image: linear-gradient(to right ,var(--background-btn-lgr1) ,var(--background-btn-gr1), var(--color-blue));
   z-index: -2;
 }
 button.gradient-button:hover{

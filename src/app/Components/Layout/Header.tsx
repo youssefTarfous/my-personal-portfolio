@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import "@/globals.css";
+import FlipText from "../UI/FlipText";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,7 @@ export default function Header() {
   return (
     <header className="flex items-center top-0 sticky justify-between text-white">
       {/* Logo */}
-      <Image src="/Logo.png" alt="Next.js logo" width={64} height={64} priority />
-
-      {/* Burger Menu (Visible on Medium Screens) */}
+      <Image src="/Logo.png" alt="YTX logo" width={64} height={64} priority />
       <span
         className="md:hidden block focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
@@ -41,34 +40,34 @@ export default function Header() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <ul className="flex flex-col md:flex-row md:gap-5  p-4 md:p-0">
-          <li className="text-center">
-            <a href="#home" className="block p-2 md:p-0 hover:text-blue-400 md:text-center ">
-              Home
-            </a>
+        <ul className="flex flex-col md:flex-row md:gap-x-16 md:bg-transparent border-2 border-solid border-[#007BFF] md:border-none  z-10 bg-[#06182C] rounded-lg ">
+          <li className="text-center p-2 text-[#007BFF] rounded-lg w-full border-solid border-[#007BFF] border-b-2 md:border-none">
+            <FlipText className="text-4xl uppercase" href="#home">
+                Home
+            </FlipText>
           </li>
-          <li>
-            <a href="#about" className="block p-2 md:p-0 hover:text-blue-400">
-              About
-            </a>
+          <li className="text-center p-2 text-[#007BFF] rounded-lg w-full border-solid border-[#007BFF] border-b-2 md:border-none">
+          <FlipText className="text-4xl uppercase" href="#home">
+                Home
+            </FlipText>
           </li>
-          <li>
-            <a href="#services" className="block p-2 md:p-0 hover:text-blue-400">
-              Services
-            </a>
+          <li className="text-center p-2 text-[#007BFF] rounded-lg w-full border-solid border-[#007BFF] border-b-2 md:border-none">
+          <FlipText className="text-4xl uppercase" href="#home">
+                Home
+            </FlipText>
           </li>
-          <li>
-            <a href="#contact" className="block p-2 md:p-0 hover:text-blue-400">
-              Contact
-            </a>
+          <li className="text-center p-2 text-[#007BFF] rounded-lg w-full border-solid border-[#007BFF] border-b-2 md:border-none">
+            <FlipText className="text-4xl uppercase" href="#home">
+                Home
+            </FlipText>
           </li>
         </ul>
       </nav>
 
       {/* Contact Button (Always Visible) */}
       <div>
-        <button className="light py-3 px-5 md:px-10 gradient-button hover:scale-105 text-white rounded-full">
-          Contact me
+        <button className="py-3 px-5 md:px-10 gradient-button hover:scale-105 text-white rounded-full">
+         <FlipText className="" href="#contact">Contact me</FlipText> 
         </button>
       </div>
     </header>
