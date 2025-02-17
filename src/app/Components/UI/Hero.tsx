@@ -53,7 +53,6 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
-
         {/* Image Section */}
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -61,7 +60,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.5 }}
         >
           <Image
-            src="/Hero-picture.png" // Ensure this is in your /public folder
+            src="/Hero-pic-main-icons.png" // Ensure this is in your /public folder
             alt="Youssef Tarfous"
             width={1100}
             height={100}
