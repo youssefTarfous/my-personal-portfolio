@@ -95,3 +95,59 @@ button.gradient-button:hover span{
 .menu-btn.open .menu-btn_burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
+@property --angle{
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+/* .gradient-navbar::after, .gradient-navbar::before{
+  content: '';
+  position: absolute;
+  height: 104%;
+  width: 101%;
+  background-image: conic-gradient(from var(--angle),transparent 50%,blue);
+  top: -1px;
+  right: -2px;
+  /* transform: translate(-50%,-50%); 
+  border-radius: 999px;
+  z-index: -1;
+  animation: 3s spin linear infinite;
+} */
+
+
+.gradient-navbar::after, 
+.gradient-navbar::before {
+  content: '';
+  position: absolute;
+  inset: -2; /* Centers it perfectly */
+  width: 101%; /* Adjusts dynamically */
+  height: 110%;
+  background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+  border-radius: 999px;
+  z-index: -1;
+  animation: spin 3s linear infinite;
+}
+
+/* Keyframes remain the same */
+/* @keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+} */
+
+
+.gradient-navbar::before{
+  filter: blur(1.5rem);
+  opacity: .7;
+}
+@keyframes spin {
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
+}
