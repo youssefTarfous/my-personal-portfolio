@@ -1,13 +1,14 @@
 "use client";
+
 import React, { useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 
-export const Navbar = () => {
-  return <SlideTabs />;
+export const Navbar = ({links}: {links: string[]}) => {
+  return <SlideTabs links={links}/>;
 };
 
-const SlideTabs = () => {
+const SlideTabs = ({links}:{links:string[]}) => {
   const containerRef = useRef(null); // Reference for the navbar container
   const [position, setPosition] = useState({
     left: 0,
@@ -22,7 +23,7 @@ const SlideTabs = () => {
         onMouseLeave={() => setPosition((prev) => ({ ...prev, opacity: 0 }))}
         className="relative hidden lg:flex bg-[#06182d] gradient-navbar mx-auto w-fit rounded-full p-1"
       >
-        {["Home", "Pricing", "Features", "Docs", "Blog"].map((label) => (
+        {links.map((label) => (
           <Tab key={label} setPosition={setPosition} containerRef={containerRef}>
            {label}
           </Tab>
@@ -75,74 +76,3 @@ const Cursor = ({
     />
   );
 };
-
-// import React, { useRef, useState } from "react";
-// import { motion } from "framer-motion";
-
-// export const Navbar = () => {
-//   return (
-//       <SlideTabs />
-//   );
-// };
-
-// const SlideTabs = () => {
-//   const [position, setPosition] = useState({
-//     left: 0,
-//     width: 0,
-//     opacity: 0,
-//   });
-
-//   return (
-//     <ul
-//       onMouseLeave={() => {
-//         setPosition((pv) => ({
-//           ...pv,
-//           opacity: 0,
-//         }));
-//       }}
-//       className="relative bg-[#06182C] gradient-navbar mx-auto flex w-fit rounded-full p-1"
-//     >
-//       <Tab setPosition={setPosition}>Home</Tab>
-//       <Tab setPosition={setPosition}>Pricing</Tab>
-//       <Tab setPosition={setPosition}>Features</Tab>
-//       <Tab setPosition={setPosition}>Docs</Tab>
-//       <Tab setPosition={setPosition}>Blog</Tab>
-//       <Cursor position={position} />
-//     </ul>
-//   );
-// };
-
-// const Tab = ({ children, setPosition }) => {
-//   const ref = useRef(null);
-
-//   return (
-//     <li
-//       ref={ref}
-//       onMouseEnter={() => {
-//         if (!ref?.current) return;
-
-//         const { width } = ref.current.getBoundingClientRect();
-
-//         setPosition({
-//           left: ref.current.offsetLeft,
-//           width,
-//           opacity: 1,
-//         });
-//       }}
-//       className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
-//     >
-//       {children}
-//     </li>
-//   );
-// };
-
-// const Cursor = ({ position }) => {
-//   return (
-//     <motion.li
-//       animate={{
-//         ...position,
-//       }}
-//       className="absolute z-0 h-7 rounded-full bg-[#007BFF] md:h-12"
-//     />
-//   );
-// };
