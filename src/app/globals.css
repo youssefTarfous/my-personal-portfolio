@@ -61,19 +61,22 @@ button.gradient-button:hover span{
   box-sizing: border-box;
 }
 
-
+/* this section is for the menu */
 .menu-btn_burger::before,
 .menu-btn_burger::after {
   content: "";
   position: absolute;
-  width: 56px;
+  width: 64px;
   height: 6px;
-  background: #fff;
+  background: #06182d;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
   transition: all 0.5s ease-in-out;
 }
-
+.menu-btn_burger.nav::before,
+.menu-btn_burger.nav::after {
+  background: white;
+}
 .menu-btn_burger::before {
   transform: translateY(-16px);
 }
@@ -82,7 +85,6 @@ button.gradient-button:hover span{
   transform: translateY(16px);
 }
 
-/*animation*/
 .menu-btn.open .menu-btn_burger {
   transform: translateX(-50px);
   background: transparent;
@@ -95,25 +97,13 @@ button.gradient-button:hover span{
 .menu-btn.open .menu-btn_burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
+
+/* this section is for the animated navbar */
 @property --angle{
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
 }
-/* .gradient-navbar::after, .gradient-navbar::before{
-  content: '';
-  position: absolute;
-  height: 104%;
-  width: 101%;
-  background-image: conic-gradient(from var(--angle),transparent 50%,blue);
-  top: -1px;
-  right: -2px;
-  /* transform: translate(-50%,-50%); 
-  border-radius: 999px;
-  z-index: -1;
-  animation: 3s spin linear infinite;
-} */
-
 
 .gradient-navbar::after, 
 .gradient-navbar::before {
@@ -128,15 +118,6 @@ button.gradient-button:hover span{
   animation: spin 3s linear infinite;
 }
 
-/* Keyframes remain the same */
-/* @keyframes spin {
-  from {
-    --angle: 0deg;
-  }
-  to {
-    --angle: 360deg;
-  }
-} */
 
 
 .gradient-navbar::before{
