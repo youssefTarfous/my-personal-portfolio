@@ -33,7 +33,7 @@ export default function Button({
       onMouseLeave={() => sethover(false)}
     >
       <motion.div
-        className={`w-2 h-2 ${hoveredBgColor} hidden md:block absolute rounded-lg left-2`}
+        className={`w-2 h-2 ${hoveredBgColor} hidden md:block absolute  z-10 rounded-lg left-2`}
         variants={{
           initial: {
             scale: 1,
@@ -47,7 +47,7 @@ export default function Button({
       ></motion.div>
       {
         <motion.div
-          className={`text-lg font-normal z-50`}
+          className={`text-lg font-normal z-20`}
           variants={{
             initial: {
               x: -8,
@@ -61,8 +61,8 @@ export default function Button({
           <p className={`${hover ? `${hoveredColor}` : `${color}`}`}>{text}</p>
         </motion.div>
       }
-      <motion.div className={`absolute flex items-center right-0`}>
-        <ArrowRight className={`w-8 h-8 ${hover ? `${hoveredColor}` : `${color}`}` } />
+      <motion.div className={`absolute z-20  flex items-center right-0`}>
+        <ArrowRight className={`w-8 h-8  ${hover ? `${hoveredColor}` : `${color}`}` } />
       </motion.div>
     </motion.a>
   );
