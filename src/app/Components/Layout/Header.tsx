@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import "@/globals.css";
 import FlipOnClickButton from "../UI/FlipButton";
@@ -11,41 +11,19 @@ import { SiGmail } from "react-icons/si";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
   const links = ["Home", "About", "Projects", "Contact"];
-  // Handle scroll event
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <header
-      className={`flex container items-center top-0 sticky justify-between text-white z-50 transition-all duration-300 ease-in-out ${
-        scrolling ? "bg-[#06182d]" : "bg-transparent"
-      } z-50`}
+      className={`flex container items-center justify-between text-white transition-all duration-300 ease-in-out z-50`}
     >
       <Image src="/Logo.png" alt="YTX logo" width={90} height={72} priority />
 
-      {/* Menu Button */}
       <div
         className={`menu-btn ${
           isOpen ? `bg-white open` : `bg-blue`
         } bg-white hover:bg-blue-700 rounded-2xl lg:hidden relative flex justify-center items-center w-20 h-20 focus:outline-none cursor-pointer transition-all duration-300 ease-in-out`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Burger Menu */}
         <div
           className={`menu-btn_burger ${
             isOpen ? "open" : ""
