@@ -8,7 +8,7 @@ import Button from "./Button";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center w-full min-h-[calc(100vh-62px)] text-white">
+    <section className="relative flex items-center w-full min-h-[calc(100vh-62px)] text-white" id="home">
       <div className="flex flex-col md:flex-row sm:items-center h-full justify-between w-full max-w-6xl mx-auto rounded-s-md shadow-lg">
         {/* Left Section (Text & Buttons) */}
         <motion.div
